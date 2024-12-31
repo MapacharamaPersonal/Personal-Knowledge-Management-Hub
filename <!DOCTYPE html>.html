@@ -87,6 +87,49 @@
         #pomodoro button:hover {
             background-color: #e05260;
         }
+        #daily-challenges {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#challenges-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#challenges-list li {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#challenges-list li button {
+    background-color: #d72638;
+    color: white;
+    border: none;
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#challenges-list li button:hover {
+    background-color: #e05260;
+}
+
+#streak-counter {
+    color: #d72638;
+    font-weight: bold;
+    text-align: center;
+}
+
     </style>
 </head>
 <body>
@@ -103,6 +146,13 @@
         <section id="task-list">
             <!-- Tasks will appear here -->
         </section>
+        <section id="daily-challenges">
+            <h2>Daily Challenges</h2>
+            <ul id="challenges-list">
+                <!-- Challenges will be dynamically added here -->
+            </ul>
+            <p id="streak-counter">Current Streak: 0 days</p>
+        </section>        
         <div id="pomodoro">
             <h2>Pomodoro Timer</h2>
             <div id="timer">25:00</div>
@@ -194,6 +244,46 @@
 
         // Initialize timer display
         updateTimerDisplay();
+        const challenges = [
+    "Do 50 pushups",
+    "Run 10 laps around the block",
+    "Meditate for 10 minutes",
+    "Drink 2 liters of water",
+    "Write down 3 things you're grateful for",
+];
+
+const challengesList = document.getElementById('challenges-list');
+const streakCounter = document.getElementById('streak-counter');
+let streak = 0;
+
+// Load challenges
+function loadChallenges() {
+    challenges.forEach((challenge) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = challenge;
+
+        const completeButton = document.createElement('button');
+        completeButton.textContent = "Complete";
+        completeButton.addEventListener('click', () => markChallengeComplete(listItem));
+
+        listItem.appendChild(completeButton);
+        challengesList.appendChild(listItem);
+    });
+}
+
+// Mark challenge as complete
+function markChallengeComplete(listItem) {
+    listItem.style.textDecoration = 'line-through';
+    listItem.querySelector('button').disabled = true;
+
+    // Update streak
+    streak++;
+    streakCounter.textContent = `Current Streak: ${streak} days`;
+}
+
+// Initialize challenges
+loadChallenges();
+
     </script>
 </body>
 </html>
