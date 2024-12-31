@@ -1,0 +1,125 @@
+
+        body {
+            font-family: 'Berserk', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1b1b1b;
+            color: #e8e8e8;
+            background-image: url('https://wallpapercave.com/wp/wp2491263.jpg'); /* Berserk themed background */
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #d72638;
+            padding: 1em;
+            text-align: center;
+            text-shadow: 2px 2px 5px #000;
+        }
+        main {
+            padding: 2em;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin: 2em auto;
+            max-width: 800px;
+        }
+        .task {
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 1em;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .task button {
+            background-color: #d72638;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .task button:hover {
+            background-color: #e05260;
+        }
+        #new-task-form {
+            margin-bottom: 2em;
+        }
+        #new-task-form input {
+            padding: 0.5em;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin-right: 0.5em;
+            background-color: #222;
+            color: #fff;
+        }
+        #quote {
+            font-style: italic;
+            color: #d72638;
+            margin-bottom: 2em;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        #pomodoro {
+            margin-top: 2em;
+            text-align: center;
+        }
+        #timer {
+            font-size: 2em;
+            margin: 1em 0;
+            color: #e8e8e8;
+        }
+        #pomodoro button {
+            background-color: #d72638;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 0.5em;
+        }
+        #pomodoro button:hover {
+            background-color: #e05260;
+        }
+        #daily-challenges {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#challenges-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#challenges-list li {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#challenges-list li button {
+    background-color: #d72638;
+    color: white;
+    border: none;
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#challenges-list li button:hover {
+    background-color: #e05260;
+}
+
+#streak-counter {
+    color: #d72638;
+    font-weight: bold;
+    text-align: center;
+}
